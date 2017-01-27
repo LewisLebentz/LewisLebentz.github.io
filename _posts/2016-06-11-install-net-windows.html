@@ -1,0 +1,44 @@
+---
+layout: post
+title: How to install .NET 3.5 in Windows 10
+date: 2016-06-11 00:18:24.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags:
+- Microsoft
+meta:
+  _edit_last: '1'
+  _subtitle: ''
+  _fullwidth: ''
+  _yoast_wpseo_primary_category: '26'
+  _wpas_done_all: '1'
+  _yoast_wpseo_focuskw_text_input: NET 3.5
+  _yoast_wpseo_focuskw: NET 3.5
+  _yoast_wpseo_linkdex: '81'
+  dsq_thread_id: '4900899693'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1479951532;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:199;}i:1;a:1:{s:2:"id";i:118;}i:2;a:1:{s:2:"id";i:123;}}}}
+author:
+  login: Lew
+  email: lew@lew.im
+  display_name: Lewis Lebentz
+  first_name: Lewis
+  last_name: Lebentz
+---
+<p>The .NET Framework is essential to many applications. At the time of writing the latest version is 4.6.1, however you'll often come across apps that depend on .NET 3.5, which was released back in 2007. Unfortunately the newer versions aren't backwards compatible, so you will have to install this version too, if it's a dependency.</p>
+<p>So the problem... for some reason, this version often fails to install often on domain joined PCs, whether you download it from Microsoft's website, or try to enable it from Programs and Features, it will likely fail. Luckily, there is a work around.</p>
+<p>Firstly you will need either a Windows 10 disk, or an ISO for it. If you don't have one, you can download the Windows 10 Pro .iso from Microsoft directly <a href="https://www.microsoft.com/en-gb/software-download/windows10ISO" target="_blank">here</a>.</p>
+<p>Depending on what device you are accessing the site from, it may not show you the direct download link. As a workaround, you can change your User Agent in Google Chrome by right clicking the page, choosing <em>Inspect</em> and then clicking the device icon. This tricks the page into thinking you are not on a Windows device, and therefore would need the .iso file to install Windows 10.</p>
+<p>[caption id="attachment_218" align="aligncenter" width="726"]<a href="https://lew.im/wp-content/uploads/2016/06/Screen-Shot-2016-06-11-at-00.00.23.png"><img class="wp-image-218 size-full" src="{{ site.baseurl }}/assets/Screen-Shot-2016-06-11-at-00.00.23.png" alt="Inspect - Chrome" width="726" height="515" /></a> Inspect - Chrome[/caption]</p>
+<p>&nbsp;</p>
+<p>Then proceed to select Windows 10, and the language, and you'll be able to download the image file.</p>
+<p>[caption id="attachment_219" align="aligncenter" width="300"]<a href="https://lew.im/wp-content/uploads/2016/06/Screen-Shot-2016-06-11-at-00.03.38.png"><img class="wp-image-219 size-medium" src="{{ site.baseurl }}/assets/Screen-Shot-2016-06-11-at-00.03.38-300x150.png" alt="Windows 10 - Download" width="300" height="150" /></a> Windows 10 - Download[/caption]</p>
+<p>&nbsp;</p>
+<p>Now, either insert your disk, or mount the ISO (you can do this by <em>right clicking</em> the file). Next, check the drive letter assigned to the disk by opening up <em>Computer</em>. Finally, open up an elevated command prompt and run the following command:</p>
+<blockquote><p>dism /online /enable-feature /featurename:NetFx3 /All /Source:<strong>F</strong>:\sources\sxs /LimitAccess</p></blockquote>
+<p>Where F is the drive letter you checked earlier.</p>
+<p>This will install the .NET 3.5 Framework directly from the Windows 10 Operating System, so you don't have to worry about the download failing every time!</p>
+<p>–</p>
+<p><a href="http://lew.im/about" target="_blank">Lewis Lebentz</a></p>

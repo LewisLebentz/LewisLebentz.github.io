@@ -1,0 +1,87 @@
+---
+layout: post
+title: How to protect against an XMLRPC attack
+date: 2015-12-07 14:06:40.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags:
+- Security
+- WordPress
+meta:
+  _edit_last: '1'
+  _subtitle: ''
+  _fullwidth: ''
+  _wpas_done_all: '1'
+  _yoast_wpseo_focuskw_text_input: XMLRPC
+  _yoast_wpseo_focuskw: XMLRPC
+  _yoast_wpseo_linkdex: '76'
+  dsq_thread_id: '4383302490'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1479951517;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:49;}i:1;a:1:{s:2:"id";i:179;}i:2;a:1:{s:2:"id";i:189;}}}}
+author:
+  login: Lew
+  email: lew@lew.im
+  display_name: Lewis Lebentz
+  first_name: Lewis
+  last_name: Lebentz
+---
+<p>Over the last week I started to notice some alerts coming in from a website uptime monitoring service I use called <a href="http://pingdom.com" target="_blank">Pingdom</a>. At first it seemed normal, over the last few months the uptime of my site had been around 99.99% which is very good, so a few instances of downtime weren't unexpected. I thought my VPS host <a href="http://digitalocean.com" target="_blank">DigitalOcean</a> may have been having some issues, or some Ubuntu updates may have caused a temporary spike in RAM.</p>
+<p>&nbsp;</p>
+<p>However, the downtime alerts continued, sometimes for just a minute at a time, but occasionally for a few hours! The alerts eventually became annoying, so I decided to investigate.</p>
+<p>&nbsp;</p>
+<p>I checked the logs for Apache, MySQL and the auth logs at the locations below:</p>
+<p>&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Apache </strong></td>
+<td><strong> /var/log/apache2/error.log</strong></td>
+</tr>
+<tr>
+<td><strong> MySQL</strong></td>
+<td><strong>/var/log/mysql/error.log </strong></td>
+</tr>
+<tr>
+<td><strong> Auth</strong></td>
+<td><strong>/var/log/auth.log</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>I could see many login attempts from IP addresses coming from all over the world. This is normal, as my site is publicly accessible, but I installed a daemon called <a href="http://fail2ban.org" target="_blank">fail2ban</a> to add some extra protection. Fail2ban scans your logs for authentication errors and bans the IP for a certain amount of time, this helps prevent brute force attacks.</p>
+<p>&nbsp;</p>
+<p>The downtime continued despite installing fail2ban, though I could see it was now successfully blocking some attacks, mainly from Hong Kong.</p>
+<p>&nbsp;</p>
+<p>I received the next alert whilst I was on my Mac, so I quickly SSH'd into my server and everything appeared to be normal I checked how much RAM was in use using this command:</p>
+<pre>free -m</pre>
+<p>I only have a low spec server, but the memory usage was almost maxed out. I used the below command to check which processes were running:</p>
+<pre>top</pre>
+<p>I could see some apache2 processes with a mysqld process seemed to be using up all the resources.</p>
+<p>&nbsp;</p>
+<p>I raised a support ticket with DigitalOcean to ask if it looked like I was the target of a DDoS attack according to their logs, I received a response after two minutes and after some further investigation we discovered this is the apache2 log files:</p>
+<pre>46.166.139.20 - - [06/Dec/2015:17:59:01 -0500] "POST /xmlrpc.php HTTP/1.0" 200 560 "-" "Mozilla/4.0 (compatible: MSIE 7.0; Windows NT 6.0)"</pre>
+<p>This was repeated constantly, multiple times per second until it killed my server.</p>
+<p>&nbsp;</p>
+<p>I did some research on the xmlrpc.php file and found a <a href="https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html" target="_blank">blog post by Sucuri</a> detailing the discovery of a new WordPress attack. The hacker creates a script to send POST requests to that file, attempting to brute force a login. Each HTTP request can contain hundreds of credentials! Usually brute force attacks can be blocked by rate limiting, but this method allows you attempt thousands of login attempts in just a few seconds.</p>
+<p>&nbsp;</p>
+<p>So, someone from the Netherlands was attempting to brute force my WordPress account, but DoS'ing my server too due to the sheer amount of requests coming in.</p>
+<p>&nbsp;</p>
+<blockquote><p>How can I fix it?</p></blockquote>
+<p>Well, the easiest way and the most effective method for me has been to modify the .htaccess file to block requests to xmlrpc.php this instantly stopped my server going down, as Apache no longer has to process the requests.</p>
+<p>&nbsp;</p>
+<p>All you need to do is open up the root directory of your web server and type in:</p>
+<pre>nano .htaccess</pre>
+<p>and add this code to the bottom of the file:</p>
+<pre># Block access to xmlrpc.php
+&lt;Files xmlrpc.php&gt;
+ order allow,deny
+ deny from all
+ ErrorDocument 403 127.0.0.1
+&lt;/Files&gt;</pre>
+<p>This will redirect the attacker to start hitting himself with all the requests and will take the load off of your server!</p>
+<p>&nbsp;</p>
+<p>I would like to thank <a href="http://digitalocean.com" target="_blank">DigitalOcean</a> for the fast support, and would also recommend setting up <a href="http://pingdom.com" target="_blank">Pingdom</a> and <a href="http://newrelic.com" target="_blank">New Relic</a> to monitor uptime and performance (both have free plans).</p>
+<p>–</p>
+<p><a href="http://lew.im/about" target="_blank">Lewis Lebentz</a></p>

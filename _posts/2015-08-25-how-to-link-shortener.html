@@ -1,0 +1,81 @@
+---
+layout: post
+title: How to create your own link shortener
+date: 2015-08-25 21:22:47.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags:
+- Development
+meta:
+  _edit_last: '1'
+  _wpas_done_all: '1'
+  _subtitle: ''
+  _fullwidth: ''
+  dsq_thread_id: '4066613473'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1479951506;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:96;}i:1;a:1:{s:2:"id";i:189;}i:2;a:1:{s:2:"id";i:194;}}}}
+author:
+  login: Lew
+  email: lew@lew.im
+  display_name: Lewis Lebentz
+  first_name: Lewis
+  last_name: Lebentz
+---
+<p>Have you ever wondered how to create your own link shortener, so you don't have to use sites like Bitly? Even if you haven't, I'm going to tell you how to create one anyway!</p>
+<p>Firstly, you will need your own domain name, and a web server running Apache and MySQL.</p>
+<ol>
+<li>Open up Terminal and browse to the directory you would like the link shortener to be in.</li>
+<li>Run the command below (If it says you do not have git installed, run 'sudo apt-get install git' first) this will download the setup files.
+<pre>git clone https://github.com/YOURLS/YOURLS.git</pre>
+</li>
+<li>Before we start the setup, we need to create the database and user account in MySQL. Run the command below followed by the admin password.
+<pre>'mysql -r root -p'</pre>
+</li>
+<li>Once you have done that, run these commands one at a time (including the semicolon at the end!):
+<pre>create database yourls;</pre>
+<p>Where it says PASSWORD, please change that to something of your choosing.</p>
+<pre>GRANT ALL on yourls.* TO 'yourls'@'localhost' identified by 'PASSWORD';</pre>
+<pre>flush privileges;</pre>
+</li>
+<li>This command will create the config file.
+<pre>cp YOURLS/user/config-sample.php YOURLS/user/config.php</pre>
+</li>
+<li>Now to edit the config file, type:
+<pre>nano YOURLS/user/config.php</pre>
+</li>
+<li>Edit
+<pre>'your db user name'</pre>
+<p>by navigating there using the keyboard and replace it with:</p>
+<pre>'yourls'</pre>
+<p>as thats the name of the user you created above. Please do the same with the password on the line below.</li>
+<li>Further down, under 'Site options'  you will see a heading called YOURS Installation URL. Please enter your domain name followed by the location you installed the config files.</li>
+<li>Keep scrolling down, and you will see a line mentioning YOURLS_COOKIEKEY'. Please visit <a href="http://yourls.org/cookie" target="_blank">http://yourls.org/cookie</a> and replace that line with the text from that webpage.</li>
+<li>Next, under 'Usernames and Passwords' you will see a line similar to below:
+<pre>'username' =&gt; 'password',</pre>
+<p>Please replace username and password with credentials you would like to use to login to the site.</li>
+<li>Now press Ctrl + X to exit, then press Y to save the changes.</li>
+<li>Finally, navigate to http://yourdomain.com/admin/ and it should prompt you to install YOURLS!</li>
+<li>Login with the credentials you entered above, and start creating short links.</li>
+</ol>
+<p>If you experience a permissions error, you may need to run the below command to change the ownership of the files:</p>
+<pre>chmod -R www-data:www-data yourlslocation</pre>
+<p>Where 'yourlslocation' is the folder where you setup YOURLS.</p>
+<p>If it says you need to make changes to the '.htaccess' file, please navigate back to the installation location and run the following command to create the file:</p>
+<pre>nano .htaccess</pre>
+<p>You will then need to paste the following text into the file:</p>
+<pre># BEGIN YOURLS
+&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /s/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /s/yourls-loader.php [L]
+&lt;/IfModule&gt;
+# END YOURLS</pre>
+<p>In the above example, I have installed my link shortener at https://lew.im/s/ so please replace that with your installation location. If you installed it in the root directory, replace the /s/ with just a /.</p>
+<p>Once everything is up and running you can create links like this: <a href="https://lew.im/s/z9sd" target="_blank">https://lew.im/s/z9sd</a>. If you want to view stats, just add a plus to the end, like so: <a href="https://lew.im/s/z9sd+" target="_blank">https://lew.im/s/z9sd+</a>.</p>
+<p>Please let me know in the comments or on <a href="https://twitter.com/LewisLebentz" target="_blank">Twitter (@LewisLebentz)</a> if you need any hep!</p>
+<p>–</p>
+<p><a href="http://lew.im/about" target="_blank">Lewis Lebentz</a></p>

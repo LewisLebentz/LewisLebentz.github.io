@@ -1,0 +1,31 @@
+---
+layout: post
+title: How to use a PlayStation controller in Android games
+date: 2015-04-11 18:28:29.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags: []
+meta:
+  dsq_thread_id: '3673359421'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1479325997;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:96;}i:1;a:1:{s:2:"id";i:74;}i:2;a:1:{s:2:"id";i:30;}}}}
+author:
+  login: Lew
+  email: lew@lew.im
+  display_name: Lewis Lebentz
+  first_name: Lewis
+  last_name: Lebentz
+---
+<p>Have you ever wondered if you could use your PlayStation (PS4 and PS4) controller for games on your (rooted) Android phone? Well now it's possible, and easy to set up too!</p>
+<p>Firstly, you will need to download the <a title="Sixaxis Compatibility Checker" href="https://play.google.com/store/apps/details?id=com.dancingpixelstudios.sixaxiscompatibilitychecker&amp;hl=en" target="_blank">Sixaxis Compatibility Checker</a> on your Android device, and click 'Start' this will check to see if your phone is compatible. If it is, you can then click on 'Pair' to make sure your phone and controller can connect with each other. You will need to either connect the controller via USB OTG (a special cable that you can purchase online). Or the other option is to download the <a title="SixaxisPairTool" href="http://www.dancingpixelstudios.com/sixaxiscontroller/tool.html" target="_blank">SixaxisPairTool</a> on your PC. This allows you to manually set the bluetooth address of your phone onto the controller. There is a GUI for the Windows application, and for Mac there is a command line program.</p>
+<p><strong>Windows</strong></p>
+<p>Plug your controller in via USB, run SixaxisPairTool and in the box that appears, enter the 'local bluetooth address' as stated in the Sixaxis Compatibility Checker app.</p>
+<p><strong>Mac</strong></p>
+<p>You will need to download libusb from <a title="libusb" href="http://www.ellert.se/twain-sane/" target="_blank">here</a> as well as the Pair Tool. Once you have done this, open Terminal and navigate to the folder where you downloaded the 'sixpair' file. Type in 'chmod 755 sixpair' to allow you to execute the program, then type in './sixpair 00:00:00:00:00:00' (where the 0's are the local bluetooth address listed in the Compatibility Checker app).</p>
+<p>&nbsp;</p>
+<p>Once you have done this, the Pair button should work. It may prompt you to grant root access at this point. Once you have accepted the controller should successfully pair.</p>
+<p>Now you know that the app will work, you will have to download the paid <a title="Sixaxis Controller" href="https://play.google.com/store/apps/details?id=com.dancingpixelstudios.sixaxiscontroller&amp;hl=en" target="_blank">Sixaxis Controller</a> app (£1.65 at time of posting). Pair it in the same way you did previously (You won't need to plug it into your computer again, just press the PlayStation button and connect via Bluetooth). Open 'Preferences' select 'Gamepad Settings' and enable it.</p>
+<p>Lastly, you will need to check the 'Mappings' make sure that all the buttons on your controller are mapped to the correct buttons. (In my case, the X and Triangle had been swapped; they are labelled as Xbox buttons too, so the X should be mapped as 'A').</p>
+<p>Then start playing! I have only tested this on <a title="FIFA 15 Ultimate Team" href="https://play.google.com/store/apps/details?id=com.ea.game.fifa15_row&amp;hl=en" target="_blank">FIFA 15 Ultimate Team</a>, and it works really well! There is a large list of Android games that support gamepads, you can find it <a title="Android Gamepad Games" href="http://androidgamepadgames.com/" target="_blank">here</a>.</p>

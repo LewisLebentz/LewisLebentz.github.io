@@ -1,0 +1,55 @@
+---
+layout: post
+title: How to fix Admin login in OS X El Capitan
+date: 2015-10-04 19:18:50.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Technology
+tags:
+- Apple
+- OS X
+meta:
+  _edit_last: '1'
+  _wpas_done_all: '1'
+  _subtitle: ''
+  _fullwidth: ''
+  dsq_thread_id: '4193576567'
+  _yoast_wpseo_primary_category: ''
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1479951514;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:179;}i:1;a:1:{s:2:"id";i:175;}i:2;a:1:{s:2:"id";i:194;}}}}
+author:
+  login: Lew
+  email: lew@lew.im
+  display_name: Lewis Lebentz
+  first_name: Lewis
+  last_name: Lebentz
+---
+<p>After updating to the latest version of OS X - El Capitan, I realised there was a major bug in the OS. I could login, but I could not use my admin credentials to authorise installations, or unlock the padlock to change preferences.</p>
+<p>I believe that this is a Centrify issue, as it affected myself and a few colleagues at work, but my personal Mac (without Centrify installed) has not had an issue on El Capitan.</p>
+<p>Luckily, I have found two fixes to resolve this issue.</p>
+<p><strong>Fix 1</strong></p>
+<ol>
+<li>Open Terminal and run this command:
+<pre>sudo mv /var/db/auth.db /var/db/auth.db.old</pre>
+</li>
+<li>Restart and log back in, the above command will force OS X to regenerate the user database, fixing the bug.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>Fix 2</strong></p>
+<ol>
+<li>Open Terminal and run the command:
+<pre>dsenableroot</pre>
+</li>
+<li>Enter a username and a password for the root account.</li>
+<li>You should see a message saying:
+<pre>dsenableroot:: ***Successfully enabled root user.</pre>
+</li>
+<li>Now logout of your user account, and login as the root account.</li>
+<li>Register <a href="http://www.centrify.com/express/server-suite-form/" target="_blank">here</a>, to obtain a download link for the latest version of Centrify.</li>
+<li>Install it using the root account, it should not be necessary to enter any passwords.</li>
+<li>Restart, and your admin accounts should now be working again!</li>
+</ol>
+<p>Did these fixes work for you in El Capitan?</p>
+<p>–</p>
+<p><a href="http://lew.im/about" target="_blank">Lewis Lebentz</a></p>
