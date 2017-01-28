@@ -9,7 +9,8 @@ title: {{ site.name }}
     {% for post in paginator.posts %}
     <li><strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong> - {{ post.date | date_to_string }}</li>
       {{ post.content | strip_html | truncatewords: 70 }}
-    <br>
+    <br />
+    <br />
     {% endfor %}
   </ul>
 </div>
