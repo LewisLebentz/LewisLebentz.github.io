@@ -7,7 +7,7 @@ title: {{ site.name }}
   <h1>Blog Posts</h1>
   <ul class="posts">
     {% for post in paginator.posts %}
-    <li><h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2> - <span>{{ post.date | date_to_string }}</span></li>
+    <li><strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong> - {{ post.date | date_to_string }}</li>
       <li>{{ post.content }}</li>
     {% endfor %}
   </ul>
