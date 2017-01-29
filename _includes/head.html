@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <title>    
-    {% if page.meta-title %} {{ page.meta-title }} {{ site.title-separator }} {{ site.title }}
+    {% if page.meta-title %} {{ page.meta-title " - " site.title }}
     {% else %} {{ site.title }}
     {% endif %}
   </title>
