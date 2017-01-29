@@ -1,5 +1,8 @@
 ---
-published: false
+published: true
+comments: true
+layout: post
+title: How to post to HipChat from AWS Lambda
 ---
 ## How to post to HipChat from AWS Lambda
 
