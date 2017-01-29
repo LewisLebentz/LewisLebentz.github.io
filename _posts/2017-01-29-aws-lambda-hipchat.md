@@ -48,6 +48,8 @@ Next, copy and paste the code from below into the code section.
 
 Change _enter_token_here_ and _enter_room_id_here_ to the values you saved earlier. Note: you can also change _'color': 'purple'_ and _'from': 'Lambda'_ to change how your message will appear in HipChat.
 
+_message = "Write your message here"_ - Enter the message you would like to post inside the speech marks.
+
 Now, set the Handler to the functionName.post so in my case, HipChat-Post.post
 
 Select '_Choose an existing role_' then select the role called '_lambda_basic_execution_'.
