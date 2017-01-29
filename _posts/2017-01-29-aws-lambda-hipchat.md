@@ -14,11 +14,11 @@ and that's exactly what I wanted! Lambda lets you run Python code, and the best 
 
 So, how do you setup Lambda to post to HipChat?
 
-Firstly, login to [hipchat.com](hipchat.com), select the '_Rooms_' tab, and find the room you would like to post in. Now, make a note of the '_API ID_' as you will need this later. Then click on '_Tokens_' in the left menu.
+Firstly, login to [hipchat.com](hipchat.com), select the _Rooms_ tab, and find the room you would like to post in. Now, make a note of the _API ID_ as you will need this later. Then click on '_Tokens_' in the left menu.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.08.37.png)
 
-Now, enter a name for your Token, make sure you have selected '_Send Notifications_' and click '_Create_'.
+Now, enter a name for your Token, make sure you have selected _Send Notifications_ and click _Create_.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.13.06.png)
 
@@ -26,9 +26,9 @@ You will now see your API token, this will allow you to post to the room. Make a
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.15.55.png)
 
-Next, login to AWS (Create an account [here](https://aws.amazon.com/free/) if you don't already have one). Navigate to the Lambda service. Click '_Create a Lambda function_' and choose the '_Blank Function_' blueprint.
+Next, login to AWS (Create an account [here](https://aws.amazon.com/free/) if you don't already have one). Navigate to the Lambda service. Click _Create a Lambda function_ and choose the _Blank Function_ blueprint.
 
-You now have the option to choose a Trigger for the function. I wanted to post to HipChat once, per day at 9AM for example, so I selected '_CloudWatch Events - Schedule_'.
+You now have the option to choose a Trigger for the function. I wanted to post to HipChat once, per day at 9AM for example, so I selected _CloudWatch Events - Schedule_.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.24.27.png)
 
@@ -36,9 +36,9 @@ Enter a name, desciption and a schedule expression. You can find the syntax for 
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.28.23.png)
 
-Make sure to tick the '_Enable_' box and click next.
+Make sure to tick the _Enable_ box and click next.
 
-Now we need to configure the function. Enter a name, description and choose '_Python 2.7_' as the runtime.
+Now we need to configure the function. Enter a name, description and choose _Python 2.7_ as the runtime.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.34.04.png)
 
@@ -52,17 +52,17 @@ _message = "Write your message here"_ - Enter the message you would like to post
 
 Now, set the Handler to the functionName.post so in my case, HipChat-Post.post
 
-Select '_Choose an existing role_' then select the role called '_lambda_basic_execution_'.
+Select _Choose an existing role_ then select the role called _lambda_basic_execution_.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.42.01.png)
 
-Leave all other options as default, and click '_Next_' at the bottom of the page. Then scroll down and click '_Create function_'.
+Leave all other options as default, and click _Next_ at the bottom of the page. Then scroll down and click _Create function_.
 
 Congratulations, you have created your first Lambda function! 
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.46.27.png)
 
-Select '_Test_' at the top of the page, it will ask you for input, but we don't need any, so leave the options as default and click '_Save and Test_'.
+Select _Test_ at the top of the page, it will ask you for input, but we don't need any, so leave the options as default and click _Save and Test_.
 
 You should now see 'Success' output to the execution results, and your message in HipChat!
 
