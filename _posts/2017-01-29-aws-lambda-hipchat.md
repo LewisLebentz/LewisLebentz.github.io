@@ -14,7 +14,7 @@ and that's exactly what I wanted! Lambda lets you run Python code, and the best 
 
 So, how do you setup Lambda to post to HipChat?
 
-Firstly, login to [hipchat.com](hipchat.com), select the _Rooms_ tab, and find the room you would like to post in. Now, make a note of the _API ID_ as you will need this later. Then click on '_Tokens_' in the left menu.
+Firstly, login to [hipchat.com](hipchat.com), select the _Rooms_ tab, and find the room you would like to post in. Now, make a note of the _API ID_ as you will need this later. Then click on _Tokens_ in the left menu.
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-01-29%20at%2016.08.37.png)
 
