@@ -4,8 +4,6 @@ comments: true
 layout: post
 title: How to post to HipChat from AWS Lambda
 ---
-## How to post to HipChat from AWS Lambda
-
 At first, I investigated using a bot to post to HipChat ([GitHub's Hubot](https://hubot.github.com/)) but it seemed a little overkill. It had many features that I didn't need, and had to be run on a server 24/7. I did run it using [Heroku](https://www.heroku.com/) so it didn't cost anything, but it was a bit too clunky.
 
 So instead, I started looking for other ways to achieve this, [Amazon Web Services' Lambda](https://aws.amazon.com/lambda/) looked like the best option. The tagline Amazon use for the service is:
