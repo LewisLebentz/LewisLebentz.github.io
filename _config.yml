@@ -2,7 +2,7 @@
 title:        Lewis Lebentz
 tagline:      Lewis Lebentz's Personal Website
 baseurl:      ""
-permalink:    /:year/:month/:title
+permalink:    /:year/:month/:title/
 paginate:     5
 
 # About/contact
