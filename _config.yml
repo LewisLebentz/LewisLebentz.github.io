@@ -1,7 +1,7 @@
 # Setup
 title:        Lewis Lebentz
 tagline:      Code, tech and cool stuff
-baseurl:      ""
+baseurl:      "https://lew.im"
 permalink:    /:year/:month/:title/
 paginate:     5
 
