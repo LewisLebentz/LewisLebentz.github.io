@@ -32,3 +32,5 @@ The Policy simply runs the script below, on all Macs in scope.
 {% gist 980acccde324da79c6cfd24472c3ee4d %}
 
 Google Chrome is now up to date on all of our Macs :)
+
+I am going to start posting more scripts I have used in Jamf to my [GitHub](https://github.com/LewisLebentz), so check it out!
