@@ -23,12 +23,12 @@ Find the Extension Attribute code below:
 
 {% gist b819019a2c4dbde7dbdbecc8f78f39b3 %}
 
-Next, I made a Smart Group targetting all Macs where *Chrome Version* = *Old* (this may take some time to populate initally, as the computers need to check in and do an Inventory Update first). Now all we need to do is create a Policy targetting the Smart Group to update Chrome!
+Next, I made a Smart Group targeting all Macs where *Chrome Version* = *Old* (this may take some time to populate initally, as the computers need to check in and do an Inventory Update first). Now all we need to do is create a Policy targeting the Smart Group to update Chrome!
 
 ![]({{site.baseurl}}/images/Screen%20Shot%202017-03-08%20at%2021.27.21.png)
 
 The Policy simply runs the script below, on all Macs in scope.
 
-{* gist 980acccde324da79c6cfd24472c3ee4d %}
+{% gist 980acccde324da79c6cfd24472c3ee4d %}
 
 Google Chrome is now up to date on all of our Macs :)
