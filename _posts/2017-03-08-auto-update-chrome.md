@@ -34,3 +34,7 @@ The Policy simply runs the script below, on all Macs in scope.
 Google Chrome is now up to date on all of our Macs :)
 
 I am going to start posting more scripts I have used in Jamf to my [GitHub](https://github.com/LewisLebentz), so check it out!
+
+*Update:* [mm2270](https://www.jamf.com/jamf-nation/users/1927/mm2270) from Jamf Nation kindly shared an alternative bash script which you could use instead of the Python one I wrote. This one uses curl and awk instead. You can find the Jamf Nation post [here](https://www.jamf.com/jamf-nation/discussions/23323/how-to-update-chrome-automatically#responseChild141302) and the code below:
+
+{% gist 7a9ef796e5ada363da5eae011ae7e96d %}
