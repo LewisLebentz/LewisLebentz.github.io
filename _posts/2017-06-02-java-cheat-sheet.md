@@ -7,76 +7,76 @@ title: Java Cheat Sheet
 
 Some notes I made for the Open University M250 Object-oriented Java programming course. Includes bits of code for the fundamentals of Java.
 
-*Start a Class*
+_Start a Class_
 public class Example {
 
-*Start a Constructor*
+_Start a Constructor_
 public Example() {
 
-*Get Character at particular location*
+_Get Character at particular location_
 variable.charAt(0);
 
-*Example of:*
+_Example of:_
 
-*-Message*
+_-Message_
 variable = person.getInitials();
 person.printReverse();
 
-*-Reference Variable Declaration*
+_-Reference Variable Declaration_
 Person friend;
 String name;
 
-*-Primitive Variable Declaration*
+_-Primitive Variable Declaration_
 int example = 5;
 char letter = a;
 
-*-String Creation*
+_-String Creation_
 example = new String(“Alice”);
 something = “Something”;
 
-*-Object Construction*
+_-Object Construction_
 example = new String(“Alice”);
 something = “Something”;
 friend = new Person(first, second);
 
-*-Operators*
+_-Operators_
 first = new String("Alice");
 example = 5 + 10;
 
-*-Actual Arguments Used*
+_-Actual Arguments Used_
 example = new String(“Alice”);
 
-*-Formal Parameters Used*
+_-Formal Parameters Used_
 friend = new Person(first, second);
 
-*-Method Names*
+_-Method Names_
 variable = person.getInitials();
 person.printReverse();
 
 
-*Primitive vs Reference Types*
+_Primitive vs Reference Types_
 
-*-Primitive*
+_-Primitive_
 Primitive types are basic types of data:
 
 byte, short, int, long, float, double, boolean, char
 
-*-Reference*
+_-Reference_
 Reference types are any instantiable class as well as arrays:
 
 String, Scanner, Random, Die, int[], String[], etc.
 
-*Scope*
+_Scope_
 Scope refers to the region of code within which a variable name is valid.
 
-*Encapsulation*
+_Encapsulation_
 AKA Data Hiding. Variables are set to private, use getters/setters to access the data.
 
-*Polymorphism*
+_Polymorphism_
 An object in Java that passes more than one IS-A tests is polymorphic in nature.
 Polymorphism occurs when objects of different kinds respond in their own way to the same message.
 
-*Creating an Interface*
+_Creating an Interface_
 public interface Danceable {
 	public void pirouette(int anInteger);
 	public void prepareToDance();
@@ -84,48 +84,48 @@ public interface Danceable {
 
 Interfaces are usually used when classes are otherwise unrelated, but their instances have a common set of messages to which they must respond.
 
-*Method Header*
+_Method Header_
 public class DanceableHoverFrog extends HoverFrog implements Danceable
 
-*Inherit from Superclass*
+_Inherit from Superclass_
 super();
 
 Superclasses are used to specify common behaviour exhibited by subclasses of the same superclass.
 
-*Loops*
+_Loops_
 
-*-For Loop*
+_-For Loop_
 for (int i = 0; i < anInteger; i++) {
 
-*-While Loop*
+_-While Loop_
 while (this.getPosition() > 5) {
 
 
-*Static Variable*
+_Static Variable_
 Belongs to class itself instead of an instance of the class
 private static int dancers = 0;
 
-*Final Variable*
+_Final Variable_
 Value cannot change
 private final int dancerNum;
 
-*Comparable*
+_Comparable_
 The interface Comparable enforces a protocol on classes that implement it.
 
 A class would implement this interface so as to allow objects of that class to be compared with one another for order i.e. implementing this interface defines a natural ordering for objects of the implementing class.
 
-*Map Declaration*
+_Map Declaration_
 private SortedMap<Integer, Set<String>> gangTable;
 this.gangTable = new TreeMap<>();
 
-*Set Declaration*
+_Set Declaration_
 HashSet<String> gangMembers = new HashSet<>();
 
-*Defensive Programming*
+_Defensive Programming_
 Defensive programming is a form of defensive design intended to ensure the continuing function of a piece of software under unforeseen circumstances.
 
 
-*Formal Arguments vs Actual Arguments*
+_Formal Arguments vs Actual Arguments_
 
 int number1 = 10;
 int number2 = 15;
@@ -135,34 +135,34 @@ public int add(int x, int y) {
 	return (x + y);
 }
 
-*Formal* - (int x, int y)
-*Actual* - (number1, number2)
+_Formal_ - (int x, int y)
+_Actual_ - (number1, number2)
 
-*Operators*
+_Operators_
 | + |  % | != | <= | && |
 |:-:|:--:|:--:|:--:|:--:|
 | - | ++ |  > |  & | || |
-| * | -- |  < |  | |  ! |
+| _ | -- |  < |  | |  ! |
 | / | == | >= |  ^ |    |
 
 
 
-*Overloading*
+_Overloading_
 Overloading is a feature where a class can have more than one method with the same name. However the arguments must be different. They have either:
 
 Different number of arguments
 Different data type in the argument
 
-*Overriding*
+_Overriding_
 Overriding is where a subclass has a method with the same name as one declared in the parent class. It must also have the same arguments as the parent class (if applicable).
 
-*Create an Interface*
+_Create an Interface_
 public interface Example {
     public void method();
     public void anotherMethod();
 }
 Interfaces are inherited by subclasses.
 
-*Collections Flow Chart*
+_Collections Flow Chart_
 ![](https://i.stack.imgur.com/aSDsG.png)
 Source - [StackOverflow](https://stackoverflow.com/questions/21974361/what-java-collection-should-i-use)
