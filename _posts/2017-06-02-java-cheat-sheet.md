@@ -169,10 +169,6 @@ public int add(int x, int y) {
 
 **Actual** - (number1, number2)
 
-**Operators**
-
-\| + % != <= && - ++ > & \|| * -- < \| ! / == >= ^
-
 
 **Overloading**
 
