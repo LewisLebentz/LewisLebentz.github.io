@@ -171,7 +171,7 @@ public int add(int x, int y) {
 
 **Operators**
 
-| + % != <= && - ++ > & || * -- < | ! / == >= ^
+\| + % != <= && - ++ > & \|| * -- < \| ! / == >= ^
 
 
 **Overloading**
