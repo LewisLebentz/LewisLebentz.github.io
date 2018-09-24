@@ -21,9 +21,9 @@ I have open-sourced the code, and posted it to GitHub here:
 
 [https://github.com/LewisLebentz/WhereIs](https://github.com/LewisLebentz/WhereIs)
 
-Feel free to send a PR or add a comment to this post with any improvements. It would greatly appreciated as it's the first time I've ever created a 'proper' public project on GitHub.
+Feel free to send a PR or add a comment to this post with any improvements. It would be greatly appreciated as it's the first time I've ever created a 'proper' public project on GitHub.
 
-Please find steps below to set this up for your own environment:
+Please find steps below to set this up for your own environment. (Note: you may wish to add some security to your command by checking the token from Slack and checking the user ID before allowing it to execute. I will be writing a new post on this.)
 
 Setup
 ---
