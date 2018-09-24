@@ -19,7 +19,7 @@ The code for this has been written in Python, and is deployed to [AWS Lambda](ht
 
 I have open-sourced the code, and posted it to GitHub here:
 
-https://github.com/LewisLebentz/WhereIs
+[https://github.com/LewisLebentz/WhereIs](https://github.com/LewisLebentz/WhereIs)
 
 Feel free to send a PR or add a comment to this post with any improvements. It would greatly appreciated as it's the first time I've ever created a 'proper' public project on GitHub.
 
