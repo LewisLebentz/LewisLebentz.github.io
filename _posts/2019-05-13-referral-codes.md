@@ -17,7 +17,7 @@ Find out more about Monzo [here](https://monzo.com).
 
 Here is my referral link:
 
-https://join.monzo.com/r/a1p3ak8
+[https://join.monzo.com/r/a1p3ak8](https://join.monzo.com/r/a1p3ak8)
 
 If you use my link, we both get £5!
 
@@ -44,7 +44,7 @@ Find out more about Amex [here](https://americanexpress.com/uk/).
 
 Here is my referral link (for United Kingdom only):
 
-http://amex.co.uk/refer/lewisl5gRM?CPID=100200082
+[http://amex.co.uk/refer/lewisl5gRM?CPID=100200082](http://amex.co.uk/refer/lewisl5gRM?CPID=100200082)
 
 If you use the link, you will receive 12,000 points (worth over £60!) and I will receive 6,000. (Note: if you don't want the Gold card, you can scroll down and pick another while still benefiting from the referral bonus)
 
@@ -57,6 +57,6 @@ Find out more about Nutmeg [here](https://nutmeg.com).
 
 Here is my referral link:
 
-https://nutmeg.mention-me.com/m/ol/xe3lm-lewis-lebentz
+[https://nutmeg.mention-me.com/m/ol/xe3lm-lewis-lebentz](https://nutmeg.mention-me.com/m/ol/xe3lm-lewis-lebentz)
 
 You get 3 months free by signing up with the link, and I get £25.
