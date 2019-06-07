@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/lewislebentz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://lew.im
+  * I am lewislebentz (https://keybase.io/lewislebentz) on keybase.
+  * I have a public key ASDA6H_JHJmuE2YdZX6bOg02uhQCdRpxzCSWB4kusR2Dogo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c0e87fc91c99ae13661d657e9b3a0d36ba1402751a71cc249607892eb11d83a20a",
+      "host": "keybase.io",
+      "kid": "0120c0e87fc91c99ae13661d657e9b3a0d36ba1402751a71cc249607892eb11d83a20a",
+      "uid": "47abe94e4185049b6d85dabe0701bb19",
+      "username": "lewislebentz"
+    },
+    "merkle_root": {
+      "ctime": 1559907517,
+      "hash": "af3ae2733efbd959d07523092bf9d5945f6cf94c3ece0f975f9552603b5e2e876727df7ddaf1344c19efb2e6e2bb6b655f359ca9c79fa22dab1251f7a8d89372",
+      "hash_meta": "a82da4555f6ec4d953539a4fd6b570f4f976ecaeda4a42f74f3c9da2610f449c",
+      "seqno": 5526965
+    },
+    "service": {
+      "entropy": "xteK4OVaKaZP2mevAro1Ph1s",
+      "hostname": "lew.im",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.0"
+  },
+  "ctime": 1559907529,
+  "expire_in": 504576000,
+  "prev": "aa92fa3b819f6bddb21a274f3fb3fa6930bb65c0fafc29e77558d2e616bb2b03",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgwOh/yRyZrhNmHWV+mzoNNroUAnUaccwklgeJLrEdg6IKp3BheWxvYWTESpcCCMQgqpL6O4Gfa92yGidPP7P6aTC7ZcD6/CnndVjS5ha7KwPEIKx0XyONJyciFvBCCpC2QO8FPwAn/oEtFCva8mo2gXSUAgHCo3NpZ8RAXDMzIqRt1RbYtzyh6h2H8vidMPOdJFmdIdBaAhlb51qEhUGpqZYoZ/9OYJtybgRILmyyfROHVFHSNGAbeEnzB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFBQjBhV73gGpPdn+gYFjtHnu1vzhVmCrTKou7UUbRi/o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lewislebentz
+
+==================================================================
