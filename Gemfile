@@ -3,6 +3,6 @@ gemspec
 
 gem 'jekyll'
 gem 'jekyll-paginate'
-gam 'jekyll-sitemap'
+gem 'jekyll-sitemap'
 gem 'kramdown'
 gem 'pygments.rb'
